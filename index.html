@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="QUEEN FITNESS - Premium ladies gym in Shevapet, Salem. Rated 5.0⭐ (71 reviews). Women-owned, empowering fitness. Open at 5 AM. Join today!">
+  <meta name="keywords" content="Queen Fitness, Ladies Gym Salem, Women Gym Shevapet, Best Gym for Women Salem, fitness for women">
+  <meta name="author" content="QUEEN FITNESS">
+  <meta name="theme-color" content="#0A0A0A">
+  <title>QUEEN FITNESS | 5.0⭐ Ladies Gym Salem | DM Sans Modern</title>
+  
+  <!-- Google Fonts: DM Sans only (fully applied) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* GLOBAL FONT: DM Sans everywhere */
+    body, h1, h2, h3, h4, .logo-text, .btn, .rating-value, .stat-number, 
+    .gallery-title, .special-badge, .badge, .info-card p, .info-card div,
+    .footer p, .map-link-btn, .reviews-highlight p, .tagline, .reviews-count,
+    .status-badge, .gallery-caption, .amenity-pill, .stat-label, .btn-primary,
+    .btn-outline, .map-actions a, .footer a, .info-card a, .logo-badge h1 {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    body {
+      background: #0A0A0A;
+      color: #E0E0E0;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Typography weights and adjustments */
+    h1, h2, h3, .logo-text, .rating-value, .stat-number, .gallery-title {
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .info-card h3 {
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .btn, .map-link-btn, .status-badge, .badge, .special-badge {
+      font-weight: 600;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1A1A1A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00BFFF;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Section with Background Image */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,30,50,0.8) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center 35%;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="%2300BFFF" d="M20,30 L80,30 M50,10 L50,50 M30,70 L70,70 M15,50 L85,50" stroke="%2300BFFF" stroke-width="2" fill="none"/><circle cx="50" cy="50" r="12" fill="%2300BFFF" opacity="0.3"/></svg>');
+      background-repeat: repeat;
+      background-size: 55px;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 0 5rem 0;
+      text-align: center;
+    }
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 12px 32px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(0, 191, 255, 0.5);
+    }
+    .logo-badge i {
+      font-size: 2.3rem;
+      color: #00BFFF;
+    }
+    .logo-badge h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 0 #004466;
+    }
+    .rating-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 20px 0 18px;
+    }
+    .stars {
+      color: #FFD700;
+      font-size: 1.7rem;
+      letter-spacing: 6px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+    .rating-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: #00BFFF;
+      color: #000000;
+      padding: 4px 22px;
+      border-radius: 60px;
+      box-shadow: 0 4px 12px rgba(0,191,255,0.4);
+    }
+    .reviews-count {
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #FFFFFF;
+      border: 1px solid #00BFFF;
+    }
+    .tagline {
+      font-size: 1.3rem;
+      margin-bottom: 28px;
+      font-weight: 500;
+      color: #B3E4FF;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 28px 0 20px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #00BFFF;
+      color: #000000;
+      box-shadow: 0 8px 18px rgba(0,191,255,0.4);
+    }
+    .btn-primary:hover {
+      background: #33CCFF;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 28px rgba(0,191,255,0.6);
+      color: #000;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #00BFFF;
+      color: #00BFFF;
+    }
+    .btn-outline:hover {
+      background: rgba(0,191,255,0.15);
+      transform: translateY(-2px);
+      color: #33CCFF;
+      border-color: #33CCFF;
+    }
+
+    /* Info Cards - Dark theme with sky blue accents */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
+    }
+    .info-card {
+      background: #111111;
+      border-radius: 32px;
+      padding: 32px 28px;
+      border: 1px solid #2A2A2A;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      transition: 0.25s;
+    }
+    .info-card:hover {
+      border-color: #00BFFF;
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px rgba(0,191,255,0.2);
+    }
+    .info-card i {
+      font-size: 2.5rem;
+      color: #00BFFF;
+      margin-bottom: 22px;
+    }
+    .info-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .info-card p, .info-card a, .info-card div {
+      color: #B0B0B0;
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+    .info-card a:hover {
+      color: #00BFFF;
+      text-decoration: underline;
+    }
+    .status-badge {
+      display: inline-block;
+      background: #1A1A1A;
+      color: #00BFFF;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 12px;
+      border: 1px solid #00BFFF;
+    }
+    .special-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #1A1A1A;
+      color: #00BFFF;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-top: 12px;
+      border: 1px solid #00BFFF;
+    }
+
+    /* Gallery section */
+    .gallery-section {
+      margin: 50px 0 30px;
+    }
+    .gallery-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 32px;
+      color: #FFFFFF;
+    }
+    .gallery-title span {
+      color: #00BFFF;
+      border-bottom: 5px solid #00BFFF;
+      padding-bottom: 6px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .gallery-card {
+      border-radius: 32px;
+      overflow: hidden;
+      background: #111111;
+      box-shadow: 0 12px 22px rgba(0,0,0,0.4);
+      transition: 0.3s ease;
+      border: 1px solid #2A2A2A;
+    }
+    .gallery-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 35px rgba(0,191,255,0.25);
+      border-color: #00BFFF;
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 14px 18px;
+      background: #111111;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #00BFFF;
+      border-top: 1px solid #2A2A2A;
+    }
+
+    /* Map */
+    .map-section {
+      background: #0D0D0D;
+      border-radius: 32px;
+      overflow: hidden;
+      margin: 50px 0;
+      border: 1px solid #2A2A2A;
+    }
+    .map-container {
+      width: 100%;
+      height: 380px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(0.2) contrast(1.05);
+    }
+    .map-actions {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 24px;
+      background: #0D0D0D;
+      gap: 12px;
+      border-top: 1px solid #2A2A2A;
+    }
+    .map-link-btn {
+      background: #1A1A1A;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #00BFFF;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      border: 1px solid #00BFFF;
+    }
+    .map-link-btn:hover {
+      background: #00BFFF;
+      color: #000000;
+      border-color: #00BFFF;
+    }
+
+    /* Reviews */
+    .reviews-highlight {
+      background: #0D0D0D;
+      border-radius: 40px;
+      padding: 44px 32px;
+      margin: 40px 0;
+      text-align: center;
+      border: 1px solid #2A2A2A;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .review-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #00BFFF;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #CCCCCC;
+    }
+    .badge-group {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #1A1A1A;
+      color: #00BFFF;
+      padding: 8px 26px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid #00BFFF;
+    }
+
+    /* Amenities row */
+    .amenities-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin: 28px 0 20px;
+    }
+    .amenity-pill {
+      background: #111111;
+      padding: 10px 26px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #00BFFF;
+      border: 1px solid #00BFFF;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 70px;
+      padding: 38px 0;
+      border-top: 1px solid #2A2A2A;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #888888;
+      background: #0A0A0A;
+    }
+    .footer a {
+      color: #00BFFF;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 0 20px;
+      }
+      .hero-content {
+        padding: 2rem 0 2.5rem;
+      }
+      .logo-badge h1 {
+        font-size: 1.5rem;
+      }
+      .gallery-card img {
+        height: 200px;
+      }
+      .btn {
+        padding: 10px 24px;
+      }
+      .hero {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container hero-content">
+    <div class="logo-badge">
+      <i class="fas fa-crown"></i>
+      <h1>QUEEN FITNESS</h1>
+    </div>
+    <div class="rating-block">
+      <span class="rating-value">5.0</span>
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <span class="reviews-count"><i class="fas fa-users"></i> 71+ reviews</span>
+    </div>
+    <p class="tagline"><i class="fas fa-female"></i> Empowering Women • Women-Owned • Fitness Redefined</p>
+    <div class="cta-buttons">
+      <a href="tel:06374174518" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+      <a href="#direction-map" class="btn btn-outline"><i class="fas fa-location-dot"></i> Get Directions</a>
+      <a href="#contact-info" class="btn btn-outline"><i class="fas fa-heart"></i> Visit Us</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Core Info Grid -->
+  <div class="info-grid">
+    <div class="info-card" id="contact-info">
+      <i class="fas fa-map-pin"></i>
+      <h3>Address</h3>
+      <p>188, Fort Main Rd, opp. to Kotak Mahindra Bank, Shevapet, Salem, Tamil Nadu 636002</p>
+      <div style="margin-top: 12px;"><i class="fas fa-building"></i> Landmark: Opposite Kotak Mahindra Bank</div>
+      <div><i class="fas fa-code-branch"></i> Plus Code: M532+G9 Salem, Tamil Nadu</div>
+      <div class="special-badge"><i class="fas fa-venus"></i> Women-owned</div>
+    </div>
+    <div class="info-card">
+      <i class="far fa-clock"></i>
+      <h3>Opening Hours</h3>
+      <div><span class="status-badge" id="dynamicStatus"><i class="fas fa-circle" style="font-size: 0.7rem; margin-right: 6px;"></i> Checking...</span></div>
+      <p style="margin-top: 18px;"><i class="fas fa-calendar-day"></i> <strong>Tuesday – Sunday:</strong> 5:00 AM – 9:00 PM</p>
+      <p><i class="fas fa-calendar-times"></i> <strong>Monday:</strong> Closed</p>
+      <p style="margin-top: 12px;"><i class="fas fa-star-of-life"></i> Opens at 5 AM tomorrow</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Contact & Connect</h3>
+      <p><i class="fas fa-phone"></i> <a href="tel:06374174518">063741 74518</a></p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/916374174518" target="_blank">WhatsApp Enquiry</a></p>
+      <p><i class="fas fa-directions"></i> <a href="#" id="directionsLink">Get Driving Directions</a></p>
+      <p style="margin-top: 18px;"><i class="fas fa-star"></i> 5.0 ★ from 71 Google reviews</p>
+      <p><i class="fas fa-hand-holding-heart"></i> Safe & empowering space for women</p>
+    </div>
+  </div>
+
+  <!-- Gallery: Women fitness images -->
+  <div class="gallery-section">
+    <div class="gallery-title">Empower Your <span>#QueenEnergy</span></div>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Women group workout fitness" loading="lazy">
+        <div class="gallery-caption"><i class="fas fa-users" style="color:#00BFFF;"></i> Group Training Sessions</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Strong woman lifting weights" loading="lazy">
+        <div class="gallery-caption"><i class="fas fa-dumbbell" style="color:#00BFFF;"></i> Strength & Conditioning</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Woman on treadmill cardio" loading="lazy">
+        <div class="gallery-caption"><i class="fas fa-heartbeat" style="color:#00BFFF;"></i> Modern Cardio Zone</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Yoga and wellness for women" loading="lazy">
+        <div class="gallery-caption"><i class="fas fa-spa" style="color:#00BFFF;"></i> Yoga & Wellness</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map section -->
+  <div id="direction-map" class="map-section">
+    <div class="map-container">
+      <iframe 
+        title="QUEEN FITNESS Location - Shevapet Salem" 
+        loading="lazy"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=188+Fort+Main+Rd+opposite+Kotak+Mahindra+Bank+Shevapet+Salem+Tamil+Nadu+636002&center=11.6575,78.1496&zoom=16"
+        allowfullscreen="">
+      </iframe>
+    </div>
+    <div class="map-actions">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=188+Fort+Main+Rd,+opposite+Kotak+Mahindra+Bank,+Shevapet,+Salem,+Tamil+Nadu+636002" target="_blank" class="map-link-btn"><i class="fas fa-car"></i> Directions (Google)</a>
+      <a href="https://maps.apple.com/?daddr=188+Fort+Main+Rd,+opposite+Kotak+Mahindra+Bank,+Shevapet,+Salem,+Tamil+Nadu+636002" target="_blank" class="map-link-btn"><i class="fab fa-apple"></i> Apple Maps</a>
+      <a href="https://www.google.com/maps/place/M532%2BG9+Salem,+Tamil+Nadu" target="_blank" class="map-link-btn"><i class="fas fa-map-marker-alt"></i> Plus Code: M532+G9</a>
+    </div>
+  </div>
+
+  <!-- Reviews & women-owned highlights -->
+  <div class="reviews-highlight">
+    <i class="fas fa-crown" style="font-size: 2.6rem; color: #00BFFF;"></i>
+    <h2 style="margin: 14px 0 10px; font-weight: 800; font-size: 2rem;">Salem's Top-Rated Ladies Gym</h2>
+    <p style="max-width: 620px; margin: 0 auto; font-size: 1.05rem;">Join a supportive community that celebrates strength, empowerment, and self-care. 5.0 stars from 71 real members.</p>
+    <div class="review-stats">
+      <div class="stat-item"><div class="stat-number">5.0</div><div class="stat-label"><i class="fas fa-star"></i> Google Rating</div></div>
+      <div class="stat-item"><div class="stat-number">71+</div><div class="stat-label">Verified Reviews</div></div>
+      <div class="stat-item"><div class="stat-number">300+</div><div class="stat-label">Active Members</div></div>
+    </div>
+    <div class="badge-group">
+      <span class="badge"><i class="fas fa-female"></i> Women-Led & Operated</span>
+      <span class="badge"><i class="fas fa-shield-alt"></i> Safe Space Certified</span>
+      <span class="badge"><i class="fas fa-heart"></i> Empowering Community</span>
+    </div>
+  </div>
+
+  <!-- Amenities row -->
+  <div class="amenities-row">
+    <div class="amenity-pill"><i class="fas fa-lock"></i> Ladies Lockers</div>
+    <div class="amenity-pill"><i class="fas fa-chalkboard-user"></i> Female Trainers</div>
+    <div class="amenity-pill"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+    <div class="amenity-pill"><i class="fas fa-hand-holding-heart"></i> Women-Only Hours</div>
+  </div>
+
+  <!-- Final CTA -->
+  <div style="text-align: center; margin: 45px 0 30px;">
+    <a href="tel:06374174518" class="btn btn-primary" style="background:#00BFFF; color: #000000; box-shadow:0 8px 20px rgba(0,191,255,0.5);"><i class="fas fa-phone-volume"></i> Call to Book Free Trial</a>
+    <p style="margin-top: 18px; font-size: 0.95rem; color:#B0B0B0;">First session free • Empowering women since 2020</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p><strong>QUEEN FITNESS (ladies gym)</strong> – 188, Fort Main Rd, opp. Kotak Mahindra Bank, Shevapet, Salem, Tamil Nadu 636002</p>
+    <p style="margin: 12px 0;">📞 <a href="tel:06374174518">063741 74518</a> | ⏰ Tue-Sun: 5 AM – 9 PM | Closed Monday | ⭐ 5.0 (71 Google Reviews)</p>
+    <p>Women-owned | Safe & Empowering Space for Every Woman</p>
+    <p style="margin-top: 16px;">© 2025 QUEEN FITNESS | Empower Your Journey <i class="fas fa-heart" style="color:#00BFFF;"></i></p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    function updateOpenStatus() {
+      const statusSpan = document.getElementById('dynamicStatus');
+      if (!statusSpan) return;
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const ist = new Date(utc + (5.5 * 3600000));
+      const day = ist.getDay();
+      const hours = ist.getHours();
+      const minutes = ist.getMinutes();
+      const currentMinutes = hours * 60 + minutes;
+
+      if (day === 1) {
+        statusSpan.innerHTML = '<i class="fas fa-circle" style="font-size: 0.7rem; margin-right: 6px; color: #ff6b6b;"></i> Closed • Opens Tuesday 5 AM';
+        statusSpan.style.background = "#1A1A1A";
+        statusSpan.style.color = "#00BFFF";
+        return;
+      }
+      const openMinutes = 5 * 60;
+      const closeMinutes = 21 * 60;
+      const isOpen = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
+      if (isOpen) {
+        statusSpan.innerHTML = '<i class="fas fa-circle" style="font-size: 0.7rem; margin-right: 6px; color: #2ecc71;"></i> Open Now • Closes 9 PM';
+        statusSpan.style.background = "#1A1A1A";
+        statusSpan.style.color = "#00BFFF";
+      } else {
+        statusSpan.innerHTML = '<i class="fas fa-circle" style="font-size: 0.7rem; margin-right: 6px; color: #f39c12;"></i> Closed • Opens tomorrow 5 AM';
+        statusSpan.style.background = "#1A1A1A";
+        statusSpan.style.color = "#00BFFF";
+      }
+    }
+    updateOpenStatus();
+    setInterval(updateOpenStatus, 60000);
+
+    const directionsLink = document.getElementById('directionsLink');
+    if (directionsLink) {
+      directionsLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const dest = encodeURIComponent("188 Fort Main Rd, opposite Kotak Mahindra Bank, Shevapet, Salem, Tamil Nadu 636002");
+        window.open(`https://www.google.com/maps/dir/?api=1&destination=${dest}`, '_blank');
+      });
+    }
+  })();
+</script>
+</body>
+</html>
